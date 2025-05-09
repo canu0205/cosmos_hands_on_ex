@@ -37,6 +37,7 @@ curl 'http://localhost:26657/broadcast_tx_commit?tx="1"'
         ▼
 [ ABCI App (Go) — our counter logic ]
 ```
+```
 
 After request with `curl http://localhost:26657/broadcast_tx_commit?tx="1"`, `BroadcastTxCommit()` from https://github.com/cometbft/cometbft/blob/v0.37.x/rpc/core/mempool.go#L62 is executed. And then `CheckTx()` of abci-counter is invoked through socket connection. If tx successfully included in the block, `DeliverTx()` and `Commit()` of abci-counter is invoked.
 
